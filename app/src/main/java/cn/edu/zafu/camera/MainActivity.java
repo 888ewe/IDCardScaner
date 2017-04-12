@@ -37,7 +37,7 @@ import cn.edu.zafu.camera.activity.CameraActivity;
 public class MainActivity extends Activity {
     private static final int CAMERA_JAVA_REQUEST_CODE = 100;
     private Button mCatch;
-//    private EditText mPath, mName, mType;
+    //    private EditText mPath, mName, mType;
     private ImageView mPhoto;
     private TextView mTextView;
     private String mPhotoPath;
@@ -95,8 +95,8 @@ public class MainActivity extends Activity {
                             Log.e("main", "success:" + response.toString());
                             progressdialog.dismiss();
                             Bean bean = new Gson().fromJson(response, Bean.class);
-                            List<Bean.CardsBean> beans=bean.getCards();
-                            if(beans.size()==0) {
+                            List<Bean.CardsBean> beans = bean.getCards();
+                            if (beans.size() == 0) {
                                 Toast.makeText(MainActivity.this, "重拍", Toast.LENGTH_SHORT).show();
                                 return;
                             }
@@ -130,6 +130,8 @@ public class MainActivity extends Activity {
         if (savedInstanceState != null) {
             bitmap = savedInstanceState.getParcelable("bitmap");
             mPhoto.setImageBitmap(bitmap);
+            String content = savedInstanceState.getString("mTextView");
+            mTextView.setText(content);
         }
         File externalFile = getExternalFilesDir("/idcard/");
         Log.e("TAG", externalFile.getAbsolutePath() + "\n" + externalFile.getAbsolutePath());
@@ -149,7 +151,7 @@ public class MainActivity extends Activity {
                 FileInputStream inStream = null;
                 try {
                     inStream = new FileInputStream(file2);
-                     bitmap = BitmapFactory.decodeStream(inStream);
+                    bitmap = BitmapFactory.decodeStream(inStream);
                     mPhoto.setImageBitmap(bitmap);
                     inStream.close();
                 } catch (Exception e) {
@@ -168,6 +170,7 @@ public class MainActivity extends Activity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putParcelable("bitmap", bitmap);
+        outState.putString("mTextView", mTextView.getText().toString());
     }
 
 }
