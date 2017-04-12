@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    >
+
+    <!--<EditText-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/path"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="/sdcard/"-->
+        <!--/>-->
+
+    <!--<EditText-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/name"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="user.jpg"-->
+        <!--/>-->
+
+    <!--<EditText-->
+        <!--android:visibility="gone"-->
+        <!--android:id="@+id/type"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="idcardFront"-->
+        <!--/>-->
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="取景"
+        />
+
+    <ImageView
+        android:layout_gravity="center"
+        android:id="@+id/photo"
+        android:layout_width="300dp"
+        android:layout_height="230dp"/>
+
+    <!--<Button-->
+        <!--android:id="@+id/recognize"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="上传并识别"-->
+        <!--/>-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="无内容"
+            />
+    </ScrollView>
+
+</LinearLayout>
